@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://sathu:sathu@localhost:27017/nookchat_app?authSource=admin
+
+server:
+  port: 8088
