@@ -19,16 +19,26 @@ function connect(event) {
     fullname = document.querySelector('#fullname').value.trim();
 
     if (nickname && fullname) {
+        console.log("Nickname and fullname entered, proceeding to chat...");
+
+        // Hide the username page and show the chat page
         usernamePage.classList.add('hidden');
         chatPage.classList.remove('hidden');
+
+        // Hide the image-container
+        document.querySelector('#image-container').classList.add('hidden');
 
         const socket = new SockJS('/ws');
         stompClient = Stomp.over(socket);
 
         stompClient.connect({}, onConnected, onError);
+    } else {
+        console.log("Nickname or fullname not entered.");
     }
     event.preventDefault();
 }
+
+
 
 
 function onConnected() {
@@ -85,6 +95,7 @@ function appendUserElement(user, connectedUsersList) {
 
     connectedUsersList.appendChild(listItem);
 }
+
 
 function userItemClick(event) {
     document.querySelectorAll('.user-item').forEach(item => {

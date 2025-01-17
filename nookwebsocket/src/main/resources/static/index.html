@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/main.css">
-  <title>ChatMate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>ChatMate</title>
 </head>
+
 <body>
-  <div class="container">
-    <div class="flex-container">
-      <!-- Image Section -->
-      <div class="image-section">
-        <img src="img/BLOG-sms-feedback_ingriglia.png" alt="Chat Image">
-      </div>
-      <!-- Form Section -->
-      <div class="form-section">
-        <h2>ChatMate</h2>
-        <p>Your Real-Time Communication Partner</p>
-        <div class="user-form" id="username-page">
-          <h2>Enter Chatroom</h2>
-          <form id="usernameForm">
-            <label for="nickname">Nickname:</label>
-            <input type="text" id="nickname" name="nickname" required>
 
-            <label for="fullname">Real Name:</label>
-            <input type="text" id="fullname" name="realname" required>
-
-            <button type="submit">Enter Chatroom</button>
-          </form>
+    <div class="container">
+        <!-- Left side for the image -->
+        <div class="image-container" id="image-container" style="margin-right: 50px;">
+            <img src="img/chat.jpeg" alt="Chat Image">
         </div>
-      </div>
-    </div>
-  </div>
 
-<div class="chat-container hidden" id="chat-page">
-  <div class="users-list">
-    <div class="users-list-container">
-      <h2>Online Users</h2>
-      <ul id="connectedUsers">
-      </ul>
-    </div>
-    <div>
-      <p id="connected-user-fullname"></p>
-      <a class="logout" href="javascript:void(0)" id="logout">Logout</a>
-    </div>
-  </div>
+        <!-- Right side for text and form -->
+        <div class="content">
+            <h1 style="color: #379C8F; text-align: center;">ChatMate</h1>
+            <p style="text-align: center">Your Real-Time Communication Partner</p>
 
-  <div class="chat-area">
-    <div class="chat-area" id="chat-messages">
+            <div class="user-form" id="username-page">
+                <h2>Enter Chatroom</h2>
+                <img src="img/icons8-chat-100.png" class="logo" />
+                <form id="usernameForm">
+                    <label for="nickname">Nickname:</label>
+                    <input type="text" id="nickname" name="nickname" required>
+
+                    <label for="fullname">Real Name:</label>
+                    <input type="text" id="fullname" name="realname" required>
+
+                    <button type="submit">Enter Chatroom</button>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <form id="messageForm" name="messageForm" class="hidden">
-      <div class="message-input">
-        <input autocomplete="off" type="text" id="message" placeholder="Type your message...">
-        <button>Send</button>
-      </div>
-    </form>
-  </div>
+    <div class="chat-container hidden" id="chat-page">
+    <div class="users-list">
+        <div class="users-list-container">
+            <h2>Online Users</h2>
+            <ul id="connectedUsers">
+            </ul>
+        </div>
+        <div>
+            <p id="connected-user-fullname"></p>
+            <a class="logout" href="javascript:void(0)" id="logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="chat-area">
+        <div class="chat-area" id="chat-messages">
+        </div>
+
+        <form id="messageForm" name="messageForm" class="hidden">
+            <div class="message-input">
+                <input autocomplete="off" type="text" id="message" placeholder="Type your message...">
+                <button>Send</button>
+            </div>
+        </form>
+    </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-<script src="/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="/js/main.js"></script>
 </body>
+
 </html>
